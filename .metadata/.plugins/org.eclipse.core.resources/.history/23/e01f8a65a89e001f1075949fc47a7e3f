@@ -1,0 +1,100 @@
+package com.prateekbisht.gaming;
+
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import com.prateekbisht.gaming.sprites.Enemy;
+import com.prateekbisht.gaming.sprites.Player;
+
+public class Board extends JPanel {
+	
+	Timer timer;
+	
+	BufferedImage backgroundImage;
+	
+	Player player;
+	Enemy enemies[] = new Enemy[3];
+	
+	public Board() {
+		setSize(1400,800);
+		loadBackgroundImage();
+		player = new Player();
+		loadEnemies();
+		gameLoop();
+		bindEvents();
+		 
+	}
+	
+	private void bindEvents() {
+		addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				player.speed = 0;
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				player.speed = 7;
+				
+			}
+		});
+	}
+	
+	private void loadEnemies() {
+		int x = 500;
+		int speed = 7;
+		for(int i=0; i<enemies.length; i++) {
+			enemies[i] = new Enemy(x + (i*300), speed + (i*7)); 
+		}
+	}
+	
+	private void gameLoop() {
+		timer = new Timer(50, (e)->repaint());
+		timer.start();
+	}
+	
+	private void drawEnemies(Graphics pen) {
+		for(Enemy enemy : enemies) {
+			enemy.draw(pen);
+			enemy.move();
+		}
+	}
+	
+	private void loadBackgroundImage() {
+		try {
+			backgroundImage = ImageIO.read(Board.class.getResource("GameBG.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Background Image Not Found...");
+			System.exit(1);
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void paintComponent(Graphics pen) {
+		
+		super.paintComponent(pen); //Clean Up
+		
+		//all painting logic will be here
+		pen.drawImage(backgroundImage, 0, 0, 1400, 800, null);
+		player.draw(pen);
+		drawEnemies(pen);
+		
+	}
+}

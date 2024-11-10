@@ -1,0 +1,24 @@
+package com.prateekbisht.gaming;
+
+import java.awt.Graphics;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+public class Board extends JPanel {
+	public Board() {
+		setSize(1400,800);
+	}
+	
+	private void loadBackgroundImage() {
+		ImageIO.read(Board.class.getResource("GameBG.jpeg"));
+	}
+	
+	public void paintComponent(Graphics pen) {
+		
+		super.paintComponent(pen); //Clean Up
+		
+		//all painting logic will be here
+		
+	}
+}

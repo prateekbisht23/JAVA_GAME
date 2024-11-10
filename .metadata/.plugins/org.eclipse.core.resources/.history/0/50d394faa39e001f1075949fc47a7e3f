@@ -1,0 +1,27 @@
+package com.prateekbisht.gaming.sprites;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+public class Player {
+	int x;
+	int y;
+	int w;
+	int h;
+	
+	ImageIcon image;
+	
+	public Player() {
+		w = 200;
+		h = 200;
+		x = 100;
+		y = 700;
+		image = new ImageIcon(Player.class.getResource("player.gif"));
+	}
+	
+	public void draw(Graphics pen){
+		pen.drawImage(image.getImage(), x, y, w, h, null);
+	}
+	
+}

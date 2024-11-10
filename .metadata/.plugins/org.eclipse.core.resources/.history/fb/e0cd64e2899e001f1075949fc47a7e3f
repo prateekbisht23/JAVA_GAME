@@ -1,0 +1,18 @@
+package com.prateekbisht.gaming;
+
+import javax.swing.JFrame;
+
+public class GameFrame extends JFrame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GameFrame frame = new GameFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Game Dev In Java");
+		frame.setResizable(false);
+		frame.setSize(1100,800);
+		frame.setVisible(true);
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.prateekbisht.gaming.sprites;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+public class Enemy {
+	int x;
+	int y;
+	int w;
+	int h;
+	
+	ImageIcon image;
+	
+	public Enemy() {
+		w = 100;
+		h = 100;
+		x = 500;
+		y = 50;
+		image = new ImageIcon(Player.class.getResource("spider.gif"));
+	}
+	
+	public void draw(Graphics pen){
+		pen.drawImage(image.getImage(), x, y, w, h, null);
+	}
+	
+}

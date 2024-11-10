@@ -1,0 +1,15 @@
+package com.prateekbisht.gaming.sprites;
+
+import javax.swing.ImageIcon;
+
+public class Enemy extends Sprite{
+	
+	public Enemy(int x) {
+		w = 100;
+		h = 100;
+		this.x = x;
+		y = 50;
+		image = new ImageIcon(Player.class.getResource("spider.gif"));
+	}
+	
+}

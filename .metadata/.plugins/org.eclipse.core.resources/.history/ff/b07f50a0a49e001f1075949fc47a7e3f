@@ -1,0 +1,5 @@
+package com.prateekbisht.gaming.sprites;
+
+public class Enemy {
+
+}

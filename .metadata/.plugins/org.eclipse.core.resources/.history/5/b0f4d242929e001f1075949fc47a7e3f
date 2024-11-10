@@ -1,0 +1,38 @@
+package com.prateekbisht.gaming;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+public class Board extends JPanel {
+	
+	BufferedImage backgroundImage;
+	
+	public Board() {
+		setSize(1400,800);
+		loadBackgroundImage();
+	}
+	
+	private void loadBackgroundImage() {
+		try {
+			backgroundImage = ImageIO.read(Board.class.getResource("GameBG.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Background Image Not Found...");
+			System.exit(1);
+			e.printStackTrace();
+		}
+	}
+	
+	public void paintComponent(Graphics pen) {
+		
+		super.paintComponent(pen); //Clean Up
+		
+		//all painting logic will be here
+		pen.drawImage(backgroundImage, 0, 0, 1400, 800, null);
+		
+	}
+}

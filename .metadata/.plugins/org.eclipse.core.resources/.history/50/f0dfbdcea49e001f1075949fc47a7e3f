@@ -1,0 +1,60 @@
+package com.prateekbisht.gaming;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import com.prateekbisht.gaming.sprites.Enemy;
+import com.prateekbisht.gaming.sprites.Player;
+
+public class Board extends JPanel {
+	
+	Timer timer;
+	
+	BufferedImage backgroundImage;
+	
+	Player player;
+	Enemy enemy;
+	
+	public Board() {
+		setSize(1400,800);
+		loadBackgroundImage();
+		player = new Player();
+		enemy = new Enemy();
+		
+		gameLoop();
+		 
+	}
+	
+	private void gameLoop() {
+		timer = new Timer(10, (e)->repaint());
+		timer.start();
+	}
+	
+	private void loadBackgroundImage() {
+		try {
+			backgroundImage = ImageIO.read(Board.class.getResource("GameBG.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Background Image Not Found...");
+			System.exit(1);
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void paintComponent(Graphics pen) {
+		
+		super.paintComponent(pen); //Clean Up
+		
+		//all painting logic will be here
+		pen.drawImage(backgroundImage, 0, 0, 1400, 800, null);
+		player.draw(pen);
+		enemy.draw(pen);
+		
+	}
+}
