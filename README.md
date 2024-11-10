@@ -38,7 +38,4 @@ Add screenshots to a folder in your project directory named `screenshots` and th
 
 Example:
 ```markdown
-![Gameplay]Uploading Gameplay.mp4…
-![Round Transition]![Screenshot 2024-11-10 at 12 46 37 PM](https://github.com/user-attachments/assets/c988dcbc-8565-4f54-b6cc-71d5011e729c)
-![Game Over]![Screenshot 2024-11-10 at 12 47 08 PM](https://github.com/user-attachments/assets/542964a0-7145-401c-b674-3669ef98ca9c)
 
