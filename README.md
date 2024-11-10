@@ -30,12 +30,17 @@ Through this project, I gained hands-on experience in:
 
 ## Screenshots
 Add screenshots of the game to showcase:
-1. **Gameplay**: A screenshot during a round.
-2. **Round Transition**: Show the transition or round number display.
-3. **Game Over Screen**: Display options for "Play Again" and "Continue."
-
-Add screenshots to a folder in your project directory named `screenshots` and then link to them in this README.
-
-Example:
-```markdown
-
+1. **Gameplay** - 
+    Here is what the game looks like while you're playing.
+   
+    <img src="Screenshots/Gameplay.png" alt="Game Screenshot" width="600">
+   
+3. **Round Transition** -
+    Below is a screenshot showing the round transition with the round number displayed.
+   
+    <img src="Screenshots/RoundTransition.png" alt="Round Transition" width="600">
+  
+5. **Game Over Screen** -
+    When the game is over, the following screen is displayed. You can choose to either restart from round 1 or continue from where you left off.
+   
+    <img src="Screenshots/GameOver.png" alt="Game Over" width="600">
